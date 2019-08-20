@@ -45,14 +45,14 @@ spec:
           exec:
             command:
             - /docker-healthcheck.sh
-          initialDelaySeconds: 60
-          periodSeconds: 10
+          initialDelaySeconds: 120
+          periodSeconds: 120
         readinessProbe:
           exec:
             command:
             - /docker-healthcheck.sh
-          initialDelaySeconds: 1
-          periodSeconds: 10
+          initialDelaySeconds: 120
+          periodSeconds: 120
 {{- if .Values.database.internal.resources }}
         resources:
 {{ toYaml .Values.database.internal.resources | indent 10 }}
